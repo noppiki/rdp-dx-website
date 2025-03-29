@@ -1,96 +1,45 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 pt-16 pb-8">
+    <footer className="bg-gray-800 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* 会社情報 */}
-          <div className="md:col-span-1">
-            <h3 className="text-xl font-bold mb-4">有限会社RDP</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-              企業のデジタルトランスフォーメーションを支援し、業務効率化とイノベーションを促進します。
-            </p>
-          </div>
-
-          {/* サービス */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h4 className="text-lg font-semibold mb-4">サービス</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/services#consulting" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                  DXコンサルティング
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#system" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                  システム開発
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#cloud" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                  クラウド移行
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#data" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                  データ分析
-                </Link>
-              </li>
-            </ul>
+            <h3 className="text-xl font-semibold mb-4">RDP DXソリューション</h3>
+            <p className="text-gray-300 mb-4">企業のデジタルトランスフォーメーションを支援します</p>
+            <p className="text-gray-300">有限会社RDP</p>
           </div>
-
-          {/* 企業情報 */}
+          
           <div>
-            <h4 className="text-lg font-semibold mb-4">企業情報</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                  会社概要
-                </Link>
-              </li>
-              <li>
-                <Link href="/about#philosophy" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                  経営理念
-                </Link>
-              </li>
-              <li>
-                <Link href="/cases" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">
-                  導入事例
-                </Link>
-              </li>
-            </ul>
+            <h3 className="text-xl font-semibold mb-4">リンク</h3>
+            <nav className="flex flex-col space-y-2">
+              <Link href="/" className="text-gray-300 hover:text-white">ホーム</Link>
+              <Link href="/services" className="text-gray-300 hover:text-white">サービス</Link>
+              <Link href="/cases" className="text-gray-300 hover:text-white">導入事例</Link>
+              <Link href="/about" className="text-gray-300 hover:text-white">会社概要</Link>
+              <Link href="/contact" className="text-gray-300 hover:text-white">お問い合わせ</Link>
+            </nav>
           </div>
-
-          {/* お問い合わせ */}
+          
           <div>
-            <h4 className="text-lg font-semibold mb-4">お問い合わせ</h4>
-            <address className="not-italic text-gray-600 dark:text-gray-400">
-              <p>〒225-0015</p>
-              <p>神奈川県横浜市青葉区荏田北1-2-1</p>
-              <p>PLATFORM218</p>
-              <p className="mt-2">Email: rdp@6330.jp</p>
-            </address>
+            <h3 className="text-xl font-semibold mb-4">お問い合わせ</h3>
+            <p className="text-gray-300 mb-2">ご質問やお問い合わせはこちらから</p>
+            <Link href="/contact" className="bg-blue-600 text-white px-4 py-2 inline-block rounded hover:bg-blue-700 transition">
+              お問い合わせフォーム
+            </Link>
             <div className="mt-4">
-              <Link 
-                href="/contact" 
-                className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md transition-colors inline-block"
-              >
-                お問い合わせ
-              </Link>
+              <p className="text-gray-300">会社サイト: <a href="https://rdp-reform.jp/" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">https://rdp-reform.jp/</a></p>
             </div>
           </div>
         </div>
-
-        {/* コピーライト */}
-        <div className="border-t border-gray-200 dark:border-gray-700 pt-8 mt-8 text-center text-gray-600 dark:text-gray-400">
-          <p>© {year} 有限会社RDP. All Rights Reserved.</p>
+        
+        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p className="text-gray-400">&copy; {new Date().getFullYear()} 有限会社RDP. All rights reserved.</p>
         </div>
       </div>
     </footer>
-  );
+  )
 }

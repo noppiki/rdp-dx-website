@@ -1,21 +1,26 @@
 #!/bin/bash
 
-# GitHub Pages向けのデプロイスクリプト
-
-# ビルド
-echo "Building the static site..."
+# 静的ファイルを出力
 npm run build
 
-# .nojekyllの確保
-echo "Ensuring .nojekyll exists..."
-touch out/.nojekyll
+# 出力先ディレクトリに移動
+cd out
 
-# CSSをコピー
-echo "Copying custom CSS..."
-cp public/custom.css out/
+# .nojekyllファイルを追加（GitHub Pagesの処理をバイパス）
+touch .nojekyll
 
-# デプロイ
-echo "Deploying to GitHub Pages..."
-npx gh-pages -d out -t true
+# 現在のブランチを取得
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
-echo "Deployment complete!"
+# GitHub Pagesにデプロイ
+git init
+git checkout -b gh-pages
+git add .
+git commit -m "Deploy to GitHub Pages"
+git remote add origin https://github.com/noppiki/rdp-dx-website.git
+git push -f origin gh-pages
+
+# 元のディレクトリに戻る
+cd ..
+
+echo "デプロイが完了しました！"

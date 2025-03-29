@@ -1,54 +1,59 @@
-# RDP DXソリューション ウェブサイト
+# RDP DXソリューションウェブサイト
 
-有限会社RDPのDX事業部のウェブサイトです。
+有限会社RDPのDX事業部サイトです。GitHub Pagesで公開されています。
 
 ## 技術スタック
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
+- [Next.js](https://nextjs.org/) - Reactフレームワーク
+- [TailwindCSS](https://tailwindcss.com/) - スタイリング
+- 静的サイト生成（SSG）
 
-## 開発環境のセットアップ
+## 開発方法
+
+### 必要条件
+
+- Node.js 18.x以上
+- npm または yarn
+
+### インストール
 
 ```bash
 # 依存関係のインストール
 npm install
+```
 
-# 開発サーバーの起動
+### 開発サーバーの起動
+
+```bash
 npm run dev
 ```
 
-開発サーバーが起動したら、ブラウザで [http://localhost:3000](http://localhost:3000) を開いてサイトをプレビューできます。
+開発サーバーが起動し、[http://localhost:3000](http://localhost:3000)でアクセスできます。
 
-## ビルドと公開
+### ビルド
 
 ```bash
-# ビルド
 npm run build
-
-# GitHub Pagesへのデプロイ
-npm run deploy
 ```
 
-## GitHub Pagesへのデプロイ方法
+コマンド実行後、`out`ディレクトリに静的ファイルが生成されます。
 
-1. リポジトリをクローンする
-   ```bash
-   git clone https://github.com/yourusername/rdp-dx-website.git
-   cd rdp-dx-website
-   ```
+## デプロイ
 
-2. 依存関係をインストールする
-   ```bash
-   npm install
-   ```
+GitHub Pagesへのデプロイは以下のコマンドで行います。
 
-3. デプロイする
-   ```bash
-   npm run deploy
-   ```
+```bash
+./deploy.sh
+```
+
+このスクリプトは、ビルドを実行し、生成された静的ファイルをGitHub Pagesにデプロイします。
+
+## プロジェクト構造
+
+- `src/app` - ページコンポーネント
+- `src/app/components` - 共通コンポーネント
+- `public` - 静的ファイル（画像など）
 
 ## ライセンス
 
-© 有限会社RDP. All Rights Reserved.
+このプロジェクトは有限会社RDPの所有物です。
