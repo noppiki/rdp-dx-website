@@ -4,55 +4,40 @@
 
 ## 技術スタック
 
-- [Next.js](https://nextjs.org/) - Reactフレームワーク
-- [TailwindCSS](https://tailwindcss.com/) - スタイリング
-- 静的サイト生成（SSG）
+- HTML5
+- CSS3
+- JavaScript
+- Font Awesome（アイコン）
 
-## 開発方法
+## 特徴
 
-### 必要条件
+- シンプルな静的Webサイト
+- レスポンシブデザイン
+- GitHub Pagesでの簡単なホスティング
 
-- Node.js 18.x以上
-- npm または yarn
+## ページ構成
 
-### インストール
+- ホーム（index.html）
+- サービス（services.html）
+- 導入事例（cases.html）
+- 会社概要（about.html）
+- お問い合わせ（contact.html）
 
-```bash
-# 依存関係のインストール
-npm install
-```
+## ローカルでの開発
 
-### 開発サーバーの起動
-
-```bash
-npm run dev
-```
-
-開発サーバーが起動し、[http://localhost:3000](http://localhost:3000)でアクセスできます。
-
-### ビルド
+このサイトは静的HTMLサイトなので、ローカルでの開発は非常に簡単です。
+リポジトリをクローンした後、HTMLファイルをブラウザで直接開くか、
+簡易HTTPサーバーを使用して表示できます。
 
 ```bash
-npm run build
+# 簡易HTTPサーバーの例（Pythonが必要）
+python -m http.server
 ```
-
-コマンド実行後、`out`ディレクトリに静的ファイルが生成されます。
 
 ## デプロイ
 
-GitHub Pagesへのデプロイは以下のコマンドで行います。
-
-```bash
-./deploy.sh
-```
-
-このスクリプトは、ビルドを実行し、生成された静的ファイルをGitHub Pagesにデプロイします。
-
-## プロジェクト構造
-
-- `src/app` - ページコンポーネント
-- `src/app/components` - 共通コンポーネント
-- `public` - 静的ファイル（画像など）
+GitHub Pagesを使用してデプロイします。
+mainブランチにプッシュするだけで、自動的にサイトが更新されます。
 
 ## ライセンス
 
