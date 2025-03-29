@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 function ContactForm() {
   const searchParams = useSearchParams();
-  const planParam = searchParams.get('plan');
+  const planParam = searchParams?.get('plan') || '';
   
   const [formData, setFormData] = useState({
     company: '',
